@@ -12,12 +12,12 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
 </head>
-<link rel="stylesheet" href="./login.css">
+<link rel="stylesheet" href="../static/css/login.css">
 <body onload="generate()">
     <div class="container d-flex justify-content-center">
         <div class="d-flex flex-column justify-content-between">
             <div class="card mt-3 p-5">
-                <div class="logo mb-3"><img src="./Logo.png" style="width: 50px;"></div>
+                <div class="logo mb-3"><img src="../asserts/Logo.png" style="width: 50px;"></div>
                     <div>
                         <p class="mb-1">Welcome to our</p>
                         <h4 class="mb-5 text-white">shipments Community</h4>
@@ -35,15 +35,15 @@
                     <label class="form-control-placeholder" for="password">Password</label>
                 </div>
                 <div class="mb-3">
-                    <div class="row">
+                    <div class="row bg">
                       <!-- <div class="col-sm-10">
                         <p name="maincaptcha" readonly class="form-control" id="">
                       </div> -->
                       <!-- <div class="col-sm-2">
                         <button class="btn btn-success btn-sm" onclick="generateCaptcha(event);" id="refresh"><i class="fa fa-refresh" style="font-size:17px"></i></button>
                       </div> -->
-                      <input type="text" id="mainCaptcha" class="col-sm-8 ml-3" readonly="readonly">
-                    </input>
+                      <input type="text" id="mainCaptcha" class="col-sm-8 ml-3 bg-light" readonly="readonly">
+                      </input>
                       <div class="col-sm-2" onclick="generate()">
                         <i class="fas fa-sync mt-4"></i>
                     </div>
@@ -65,12 +65,12 @@
                     <span id="error" style="color:red;"></span>
                     <span id="success" style="color:#004F76;"></span>
                   </div>
-                <button class="btn btn-primary btn-block btn-lg mt-1 mb-2" ><span>Login <i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+                <button class="btn btn-primary btn-block btn-lg mt-1 mb-2"  onclick="CheckValidCaptcha();"><span>Login <i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
             </div>
         </div>
     </div>
 
-    <script src="./captcha.js"></script>
+    <script src="../static/js/captcha.js"></script>
 </body>
 </html>
 

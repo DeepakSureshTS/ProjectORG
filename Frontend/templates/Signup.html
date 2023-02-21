@@ -8,17 +8,18 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" rel="stylesheet" />
 <title>Sign Up Form</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
 
 </head>
-<link rel="stylesheet" href="./login.css">
+<link rel="stylesheet" href="../static/css/login.css">
 <body>
     <div class="container d-flex justify-content-center">
         <div class="d-flex flex-column justify-content-between">
             <div class="card mt-3 p-5">
-                <div class="logo mb-3"><img src="./Logo.png" style="width: 50px;"></div>
+                <div class="logo mb-3"><img src="../asserts/Logo.png" style="width: 50px;"></div>
                     <div>
                         <p class="mb-1">Start managing your</p>
                         <h4 class="mb-5 text-white">shipments with us!</h4>
@@ -28,13 +29,16 @@
             </div>
             <div class="card two bg-white px-5 py-4 mb-3">
 
-                <div class="form-group"><input type="text" class="form-control" id="name" required><label class="form-control-placeholder" for="name">Full Name</label></div>
-                <div class="form-group"><input type="text" class="form-control" id="mail" required><label class="form-control-placeholder" for="mail">Email</label></div>
-                <div class="form-group"><input type="password" class="form-control" id="password" required><label class="form-control-placeholder" for="password">Password</label></div>
-                <button class="btn btn-primary btn-block btn-lg mt-1 mb-2"><span>Get started<i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+                <div class="form-group"><input type="text" class="form-control" id="typeUserName" required><label class="form-control-placeholder" for="username`">Username</label></div>
+                <div class="form-group"><input type="text" class="form-control" id="typeEmail" required><label class="form-control-placeholder" for="email">Email</label></div>
+                <div class="form-group"><input type="password" class="form-control" id="typePassword" required><label class="form-control-placeholder" for="password">Password</label></div>
+                <button class=" btn-primary btn-block btn-lg mt-1 mb-2" onclick="signUpData()"><span>Get started<i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
             </div>
         </div>
     </div>
-    
+    <script  src="../static/js/signup.js">
+
+
+    </script>     
 </body>
-</html>
+</html

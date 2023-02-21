@@ -16,7 +16,23 @@ function generate() {
        document.getElementById("mainCaptcha").value = code
      }
 
-
+     function CheckValidCaptcha(){
+        var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+        var string2 = removeSpaces(document.getElementById('txtInput').value);
+        if (string1 == string2){
+   document.getElementById('success').innerHTML = "Form is validated Successfully";
+   //alert("Form is validated Successfully");
+          return true;
+        }
+        else{       
+   document.getElementById('error').innerHTML = "Please enter a valid captcha."; 
+   //alert("Please enter a valid captcha.");
+          return false;
+        }
+    }
+    function removeSpaces(string){
+      return string.split(' ').join('');
+    }
 function printmsg() {
 	const usr_input = document
 		.getElementById("submit").value;
