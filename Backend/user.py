@@ -9,7 +9,7 @@ class User(BaseModel):
     username:str = Field(min_length=4,max_length=32)
     email:str = Field(...,regex= email_regex)
     password:str = Field(...,regex=password_regex)
-    cpassword:str
+    # cpassword:str
 
 class Login(BaseModel):
     email:str
@@ -22,25 +22,25 @@ class NewShipment(BaseModel):
     route_details: str
     goods_type: str
     device: str
-    expected_delivery_date: datetime
+    expected_delivery_date: str
     PO_number: str
     delivery_no: int
     NDC_no: int
     batch_id: int
     Serial_no_of_goods: int
 
-class Shipments(Document):
-    Invoice_no = IntField()
-    container_no = IntField()
-    shipment_description = StringField()
-    route_details = StringField()
-    goods_type = StringField()
-    device = StringField()
-    expected_delivery_date = DateField()
-    PO_number = StringField()
-    delivery_no = IntField()
-    NDC_no = IntField()
-    batch_id = IntField()
-    Serial_no_of_goods = IntField()
+# class Shipments(Document):
+#     Invoice_no = IntField()
+#     container_no = IntField()
+#     shipment_description = StringField()
+#     route_details = StringField()
+#     goods_type = StringField()
+#     device = StringField()
+#     expected_delivery_date = DateField()
+#     PO_number = StringField()
+#     delivery_no = IntField()
+#     NDC_no = IntField()
+#     batch_id = IntField()
+#     Serial_no_of_goods = IntField()
     
  

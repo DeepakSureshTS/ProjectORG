@@ -10,7 +10,7 @@ from db import collection_name,collection_shipment
 from jwt import (ALGORITHM, JWT_SECRET_KEY, create_access_token,
                  verify_access_token)
 from schema import userEntity, usersEntity,shipsEntity
-from user import Login, NewShipment, Shipments, User
+from user import Login, NewShipment, User
 
 user= APIRouter()
 
@@ -93,20 +93,20 @@ def add_shipment(shipment: NewShipment):
     #         headers={"WWW-Authenticate": "Bearer"},
     #     )
         
-# new_shipment = Shipments(Invoice_no=shipEntity.Invoice_no,
-#                              container_no=shipEntity.container_no,
-#                              shipment_description=shipEntity.shipment_description,
-#                              route_details=shipEntity.route_details,
-#                              goods_type=shipEntity.goods_type,
-#                              device=shipEntity.device,
-#                              expected_delivery_date=shipEntity.expected_delivery_date,
-#                              PO_number=shipEntity.PO_number,
-#                              delivery_no=shipEntity.delivery_no,
-#                              NDC_no=shipEntity.NDC_no,
-#                              batch_id=shipEntity.batch_id,
-#                              Serial_no_of_goods=shipEntity.Serial_no_of_goods
-#                              )
-# new_shipment.save()
+    # new_shipment = Shipments(Invoice_no=shipment.Invoice_no,
+    #                          container_no=shipment.container_no,
+    #                          shipment_description=shipment.shipment_description,
+    #                          route_details=shipment.route_details,
+    #                          goods_type=shipment.goods_type,
+    #                          device=shipment.device,
+    #                          expected_delivery_date=shipment.expected_delivery_date,
+    #                          PO_number=shipment.PO_number,
+    #                          delivery_no=shipment.delivery_no,
+    #                          NDC_no=shipment.NDC_no,
+    #                          batch_id=shipment.batch_id,
+    #                          Serial_no_of_goods=shipment.Serial_no_of_goods
+    #                          )
+    # new_shipment.save()
 
 
 
