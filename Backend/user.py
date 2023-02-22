@@ -15,6 +15,9 @@ class Login(BaseModel):
     email:str
     password:str
 
+class TokenData(BaseModel):
+    email:str = None
+
 class NewShipment(BaseModel):
     Invoice_no: int
     container_no: int
