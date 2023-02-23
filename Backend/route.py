@@ -2,8 +2,8 @@ from datetime import datetime
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from jwt import get_current_user
-
-
+from fastapi.security import OAuth2PasswordRequestForm
+import json
 
 
 from config import Hash
@@ -32,6 +32,10 @@ async def find_users(user:Login):
    access_token = create_access_token(data={"token":user_data["email"]})
    return {"access_token": access_token, 
    "token_type": "bearer"}
+
+  
+    
+
    
 
 @user.post('/signup')
@@ -49,7 +53,7 @@ async def create_user(user:User):
     # return usersEntity(collection_name.find())
     return{"message": "created new user"}
 
-@user.get("/dashboard")
+@user.get("/token_authentication")
 def validity_check(token: str = Depends(get_current_user)):
     if token:
         return True

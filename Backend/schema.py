@@ -28,3 +28,12 @@ def shipEntity(item) -> dict:
 
 def shipsEntity(entity) -> list:
     return [shipEntity(item) for item in entity]
+
+def loginEntity(item) -> dict:
+    return{
+        "email":str(item["email"]),
+        "password":str(item["password"]),
+    }
+
+def loginsEntity(entity) -> list:
+    return [loginEntity(item) for item in entity]
