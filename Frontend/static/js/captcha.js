@@ -22,58 +22,64 @@ function generate() {
         if (string1 == string2){
   //  document.getElementById('success').innerHTML = "Form is validated Successfully";
           alert("Form is validated Successfully");
+          authorise()
           return true;
         }
         else{       
-   document.getElementById('error').innerHTML = "Please enter a valid captcha."; 
-   //alert("Please enter a valid captcha.");
+   
+         alert("Please enter a valid captcha.");
           return false;
         }
     }
     function removeSpaces(string){
       return string.split(' ').join('');
     }
-function printmsg() {
-	const usr_input = document
-		.getElementById("submit").value;
-	
-	// Check whether the input is equal
-	// to generated captcha or not
-	if (usr_input == captcha.innerHTML) {
-		var s = document.getElementById("key")
-			.innerHTML = "Matched";
-		generate();
-	}
-	else {
-		var s = document.getElementById("key")
-			.innerHTML = "not Matched";
-		generate();
-	}
+
+
+
+function authorise(){
+let emailData = document.querySelector("#mail").value
+let passWord = document.querySelector("#password").value
+
+  $.ajax({
+  
+    url:"http://"+window.location.hostname+":8000/login",
+    type:"POST",
+    dataType: "json",
+            contentType: "application/json",
+    data:JSON.stringify({
+      email:emailData,
+      password:passWord
+
+    }),
+   success:function(data) {
+     console.log(data)
+     console.log(data.access_token);
+     localStorage.setItem("access_token", data.access_token)
+     $.ajax({
+      type: 'GET',
+      url: 'http://localhost:8000/token_authentication',
+      headers: {
+        'Authorization': `Bearer ${data.access_token}`
+    },
+      success: function(newData){
+          console.log('success');
+          //console.log(newData);
+          window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html"
+     }
+   });
+     
+   },
+   error: function(xhr, ajaxOptions, thrownError){
+     alert ("Token not generated")
+   }
+ })
+
+
+ 
 }
 
 
 
-// let emailData = document.querySelector("#mail").value
-//   let passWord = document.querySelector("#password").value
 
-//   $.ajax({
-     
-//     url:"http://"+window.location.hostname+":8000/login",
-//     dataType: "json",
-//          contentType: "application/json",
-//    type:"POST",
-//    data:JSON.stringify({
-//      email:emailData,
-//      password:passWord
-
-//    }),
-//    success:function(data) {
-//      console.log(data)
-//      localStorage.setItem("access_token", data.access_token)
-//      window.location.href = "http://"+window.location.hostname+":5500/../../templates/dashboard.html";
-//      return(data)
-//    },
-//    error: function(xhr, ajaxOptions, thrownError){
-//      alert ("Token not generated")
-//    }
-//  })
+  

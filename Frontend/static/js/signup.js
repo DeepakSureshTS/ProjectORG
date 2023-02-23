@@ -19,7 +19,7 @@ function signUpData(){
       }),
       success:function(data) {
         console.log(data)
-        window.location.href = "http://"+window.location.hostname+":5500/../../templates/Login.html";
+        window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
         return(data)
       },
       error: function(xhr, ajaxOptions, thrownError){

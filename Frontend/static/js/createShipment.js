@@ -22,7 +22,7 @@ async function createShipment(){
         PO_number = null
         alert("Type Six digit for the po_number")
     }
-    let delivery_no = document.querySelector("#delivery_no").value
+    let delivery_no = document.querySelector("#delivery_no").value      
     let NDC_no = document.querySelector("#ndc_no").value
     let batch_id = document.querySelector("#batch_id").value
     let Serial_no_of_goods = document.querySelector("#serial_no").value                
@@ -51,7 +51,7 @@ async function createShipment(){
     }),
     success:function(data) {
 
-     window.location.href = "http://"+window.location.hostname+":5500/../../templates/dashboard.html";
+     window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html";
         return(data)
     },
     error: function(xhr, ajaxOptions, thrownError){
