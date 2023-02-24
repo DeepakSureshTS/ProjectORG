@@ -56,18 +56,8 @@ let passWord = document.querySelector("#password").value
      console.log(data)
      console.log(data.access_token);
      localStorage.setItem("access_token", data.access_token)
-     $.ajax({
-      type: 'GET',
-      url: 'http://localhost:8000/token_authentication',
-      headers: {
-        'Authorization': `Bearer ${data.access_token}`
-    },
-      success: function(newData){
-          console.log('success');
-          //console.log(newData);
-          window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html"
-     }
-   });
+     window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html"
+
      
    },
    error: function(xhr, ajaxOptions, thrownError){
