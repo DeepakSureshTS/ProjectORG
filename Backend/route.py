@@ -54,10 +54,7 @@ async def create_user(user:User):
 def validity_check(token: str = Depends(get_current_user)):
     if token:
         return True
-    
-      
-       
-
+        
 @user.post("/add_shipment")
 def add_shipment(shipment: NewShipment,token: Login = Depends(get_current_user)):
     if token:
