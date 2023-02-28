@@ -11,9 +11,9 @@ async function createShipment(){
         alert ("no special character in shipment Description")
     }
     let route_details = document.querySelector("#route_details ")
-    var ddl = route_details.options[route_details.selectedIndex].value;
+    var route_values = route_details.options[route_details.selectedIndex].value;
     let goods_type = document.querySelector("#goods_type ")
-    var gds = goods_type.options[goods_type.selectedIndex].value;
+    var goods_values = goods_type.options[goods_type.selectedIndex].value;
     let device = document.querySelector("#device").value
     let expected_delivery_date = document.querySelector("#expected_delivery_date").value
     let PONumber = document.querySelector("#po_no").value
@@ -41,8 +41,8 @@ async function createShipment(){
         Invoice_no:Invoice_no,
         container_no:container_no,
         shipment_description:shipment_description,
-        route_details:ddl,
-        goods_type:gds,
+        route_details:route_values,
+        goods_type:goods_values,
         device:device,
         expected_delivery_date:expected_delivery_date,
         PO_number:PO_number,

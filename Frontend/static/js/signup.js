@@ -19,11 +19,15 @@ function signUpData(){
       }),
       success:function(data) {
         console.log(data)
-        window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
-        return(data)
+        if(data.error){
+          alert(data.error)
+        }
+        else{
+          window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
+        }
       },
       error: function(xhr, ajaxOptions, thrownError){
-        alert ("User with this name already exist")
+      alert ("User with this name already exist")
       }
     })            
     } else {

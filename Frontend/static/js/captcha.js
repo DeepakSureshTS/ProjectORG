@@ -20,14 +20,16 @@ function generate() {
         var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
         var string2 = removeSpaces(document.getElementById('txtInput').value);
         if (string1 == string2){
-  //  document.getElementById('success').innerHTML = "Form is validated Successfully";
-          alert("Form is validated Successfully");
+          document.getElementById("error").style.display = "none";
+    document.getElementById('success').innerHTML = "Form is validated Successfully";
+          // alert("Form is validated Successfully");
           authorise()
           return true;
         }
-        else{       
-   
-         alert("Please enter a valid captcha.");
+        else{
+          document.getElementById("error").style.display = "block";       
+    document.getElementById('error').innerHTML = "Invalid Captcha";
+        //  alert("Please enter a valid captcha.");
           return false;
         }
     }
