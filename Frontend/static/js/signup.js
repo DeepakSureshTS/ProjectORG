@@ -27,7 +27,7 @@ function signUpData(){
         }
       },
       error: function(xhr, ajaxOptions, thrownError){
-      alert ("User with this name already exist")
+        alert ("User with this name already exist")
       }
     })            
     } else {
