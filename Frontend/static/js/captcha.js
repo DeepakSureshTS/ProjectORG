@@ -21,7 +21,7 @@ function generate() {
         var string2 = removeSpaces(document.getElementById('txtInput').value);
         if (string1 == string2){
           document.getElementById("error").style.display = "none";
-    document.getElementById('success').innerHTML = "Form is validated Successfully";
+    // document.getElementById('success').innerHTML = "Form is validated Successfully";
           // alert("Form is validated Successfully");
           authorise()
           return true;
@@ -55,16 +55,21 @@ let passWord = document.querySelector("#password").value
 
     }),
    success:function(data) {
-     console.log(data)
-     console.log(data.access_token);
-     localStorage.setItem("access_token", data.access_token)
-    //  window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html"
-
+     console.log(data.access_token)
+    
+      localStorage.setItem("access_token", data.access_token)  
+      window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html"
+   
      
-   },
-   error: function(xhr, ajaxOptions, thrownError){
-     alert ("Token not generated")
-   }
+    },
+    error: function(xhr, ajaxOptions, thrownError){
+      console.log(xhr.responseJSON.detail)
+      
+       alert (xhr.responseJSON.detail)
+
+    }
+    
+   
  })
 
 

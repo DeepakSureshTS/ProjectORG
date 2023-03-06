@@ -3,8 +3,7 @@ function signUpData(){
     let emailData = document.querySelector("#typeEmail").value
     let passWord = document.querySelector("#typePassword").value
 
-    var re = new RegExp("(?=^.{8,}$)((?=.*\d)|(?=.*))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
-    if (re.test(passWord)) {
+  
       $.ajax({
      
        url:"http://"+window.location.hostname+":8000/signup",
@@ -19,18 +18,15 @@ function signUpData(){
       }),
       success:function(data) {
         console.log(data)
-        if(data.error){
-          alert(data.error)
-        }
-        else{
+        
           window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
-        }
+        
       },
       error: function(xhr, ajaxOptions, thrownError){
-        alert ("User with this name already exist")
+        console.log(xhr.responseJSON.detail)
+      
+        alert (xhr.responseJSON.detail)
       }
     })            
-    } else {
-      alert("Invalid Pattern for password")
-    }
+    
   }
