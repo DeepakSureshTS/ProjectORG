@@ -1,17 +1,17 @@
-from datetime import datetime
+
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from jose import JWSError, JWTError
+from validation import validation
+
 from jwt import get_current_user
-from fastapi.security import OAuth2PasswordRequestForm
-import json
+
 
 
 from config import Hash
 from db import collection_name,collection_shipment
 from jwt import (ALGORITHM, create_access_token,
                  verify_access_token)
-from schema import userEntity, usersEntity,shipsEntity
+
 from user import Login, NewShipment, User
 
 user= APIRouter()
@@ -22,27 +22,31 @@ async def find_users(user:Login):
    user_data= collection_name.find_one({"email":user.email})
  
    if not user_data:
-     return {
-        "error":"email not found"
-     }
+     raise HTTPException(
+        status_code=400,detail= "Email not Found"
+     )
    if not Hash.verify(user.password,user_data["password"]) :
-       return{
-        "error":" password mismatch"
-       }
+      raise HTTPException(
+        status_code=400,detail= "Password mismatch"
+     )
 
    access_token = create_access_token(data={"token":user_data["email"]})
-   return {"access_token": access_token, 
-   "token_type": "bearer"}
+   return {"access_token": access_token,"token_type": "bearer"}
+
+  
 
 
 @user.post('/signup')
 async def create_user(user:User):
     email_check= collection_name.find_one({"email":user.email})
-   #  validate_password = pass_validation(user)
+    
+    validation(user)
+
     if email_check:
-        return{
-            "error":"email already found"
-        }  
+       
+     raise HTTPException(
+        status_code=400,detail= "email already found"
+     )
     else: 
      hashed_pass= Hash.bcrypt(user.password)
      user.password= hashed_pass

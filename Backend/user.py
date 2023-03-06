@@ -1,11 +1,10 @@
 from pydantic import BaseModel, Field
 
-password_regex= "((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})"
-email_regex="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+
 class User(BaseModel):
-    username:str = Field(min_length=4,max_length=32)
-    email:str = Field(...,regex= email_regex)
-    password:str = Field(...,regex=password_regex)
+    username:str 
+    email:str 
+    password:str 
 
 class Login(BaseModel):
     email:str 
@@ -20,7 +19,7 @@ class NewShipment(BaseModel):
     shipment_description: str
     route_details:str
     goods_type: str
-    device: str
+    device: str  
     expected_delivery_date: str
     PO_number: str
     delivery_no: int
