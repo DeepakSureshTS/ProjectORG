@@ -1,16 +1,9 @@
-
-
 from fastapi import APIRouter, Depends, HTTPException, status
 from validation import validation
-
 from jwt import get_current_user
-
-
-
 from config import Hash
 from db import collection_name,collection_shipment
-from jwt import (ALGORITHM, create_access_token,
-                 verify_access_token)
+from jwt import (create_access_token)
 
 from user import Login, NewShipment, User
 
@@ -33,8 +26,6 @@ async def find_users(user:Login):
    access_token = create_access_token(data={"token":user_data["email"]})
    return {"access_token": access_token,"token_type": "bearer"}
 
-  
-
 
 @user.post('/signup')
 async def create_user(user:User):
@@ -54,10 +45,12 @@ async def create_user(user:User):
     # return usersEntity(collection_name.find())
     return{"message": "created new user"}
 
+
 @user.get("/token_authentication")
 def validity_check(token: str = Depends(get_current_user)):
     if token:
         return {"Loggedemail":token}
+    
         
 @user.post("/add_shipment")
 def add_shipment(shipment: NewShipment,token: Login = Depends(get_current_user)):

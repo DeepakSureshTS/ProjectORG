@@ -3,9 +3,6 @@ from datetime import datetime,timedelta
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 
-from user import TokenData
-
-
 SECRET_KEY = "2612d2f66bfe9a9c4a0ed25be92a29f7"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 20
@@ -18,9 +15,6 @@ def create_access_token(data:dict):
     encode_jwt=jwt.encode(to_encode,SECRET_KEY,algorithm=ALGORITHM)
     return encode_jwt
 
-# def verify_access_token(token:str):
-#         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-#         return payload
 def verify_access_token(token: str):
         try:
           payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
@@ -30,8 +24,6 @@ def verify_access_token(token: str):
              status_code=status.HTTP_403_FORBIDDEN,
              detail="Could not validate credentials",
              headers={"WWW-Authenticate": "Bearer"})
-
-
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 

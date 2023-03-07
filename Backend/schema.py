@@ -3,8 +3,7 @@ def userEntity(item) -> dict:
         "id":str(item["_id"]),
         "username":str(item["username"]),
         "email":str(item["email"]),
-        "password":str(item["password"]),
-        # "cpassword":str(item["cpassword"]),
+        "password":str(item["password"]),        
     }
 
 def usersEntity(entity) -> list:
