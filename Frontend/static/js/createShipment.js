@@ -61,3 +61,7 @@ async function createShipment(){
     }
     })
 }
+function logout(){
+    localStorage.removeItem('access_token')
+    window.location.href = "../../../Frontend/index.html"
+  }

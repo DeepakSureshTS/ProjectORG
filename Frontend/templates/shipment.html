@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
     <title>Shipment</title>
     <link rel="stylesheet" href="../static/css/shipment.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -66,7 +71,7 @@
           <!-- sidebar-content  -->
           <div class="sidebar-footer">
             
-            <a href="#">
+            <a href="#" onclick="logout()">
               <i class="fa fa-power-off"></i>
             </a>
           </div>
@@ -83,15 +88,15 @@
       
               <div class="form-input">
                   <label for="invoice-no">Shipment/Invoice No :</label>
-                  <input type="text" id="invoice_no">
+                  <input type="text" id="invoice_no" placeholder="Enter Invoice number">
               </div>
               <div class="form-input">
                   <label for="container-no">Container No :</label>
-                  <input type="text" id="container_no">
+                  <input type="text" id="container_no" placeholder="Enter Container number">
               </div>
               <div class="form-input">
                   <label for="shipment-description">Shipment Description :</label>
-                  <input type="text" id="shipment_description">
+                  <input type="text" id="shipment_description" placeholder="Enter Shipment Description">
               </div>
               <div class="form-input">
                   <label for="route-details">Route Details :</label>                  
@@ -140,23 +145,23 @@
       
               <div class="form-input">
                   <label for="po-no">PO Number :</label>
-                  <input type="text" id="po_no">
+                  <input type="text" id="po_no" placeholder="Enter 6 digit PO">
               </div>
               <div class="form-input">
                   <label for="delivery-no">Delivery Number :</label>
-                  <input type="text" id="delivery_no">
+                  <input type="text" id="delivery_no" placeholder="Enter Delivery number">
               </div>
               <div class="form-input">
                   <label for="ndc-no">NDC Number :</label>
-                  <input type="text" id="ndc_no">
+                  <input type="text" id="ndc_no" placeholder="Enter NDC number">
               </div>
               <div class="form-input">
                   <label for="batch-id">Batch Id :</label>
-                  <input type="number" id="batch_id">
+                  <input type="number" id="batch_id" placeholder="Enter Batch id">
               </div>
               <div class="form-input">
                   <label for="serial-no">Serial number of Goods :</label>
-                  <input type="number" id="serial_no">
+                  <input type="number" id="serial_no" placeholder="Enter serial number">
               </div>
               <div class="form-input">
                   <button id="sub-btn" onclick="createShipment()">Submit Details</button>

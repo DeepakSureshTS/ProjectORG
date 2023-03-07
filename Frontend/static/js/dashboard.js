@@ -18,5 +18,9 @@ async function validatetoken(){
             }
     })
     return status
+  }  
+
+function logout(){
+    localStorage.removeItem('access_token')
+    window.location.href = "../../../Frontend/index.html"
   }
-  
