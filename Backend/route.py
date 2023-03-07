@@ -57,13 +57,13 @@ async def create_user(user:User):
 @user.get("/token_authentication")
 def validity_check(token: str = Depends(get_current_user)):
     if token:
-        return True
+        return {"Loggedemail":token}
         
 @user.post("/add_shipment")
 def add_shipment(shipment: NewShipment,token: Login = Depends(get_current_user)):
     if token:
         collection_shipment.insert_one(dict(shipment))
-        return {"message": "created successfully","Loggedemail":token}
+        return {"message": "created successfully"}
     else:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED(
