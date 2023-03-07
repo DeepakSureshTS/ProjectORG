@@ -19,10 +19,10 @@ function signUpData(){
       success:function(data) {
         console.log(data)
         
-          window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
+         window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
         
       },
-      error: function(xhr, ajaxOptions, thrownError){
+      error: function(xhr){
         console.log(xhr.responseJSON.detail)
       
         alert (xhr.responseJSON.detail)
