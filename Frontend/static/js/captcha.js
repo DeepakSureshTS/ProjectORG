@@ -65,8 +65,9 @@ let passWord = document.querySelector("#password").value
     },
     error: function(xhr, ajaxOptions, thrownError){
       console.log(xhr.responseJSON.detail)
-      
-       alert (xhr.responseJSON.detail)
+      document.getElementById("error").style.display = "block";       
+      document.getElementById('error').innerHTML =xhr.responseJSON.detail;
+      //  alert (xhr.responseJSON.detail)
 
     }
     
