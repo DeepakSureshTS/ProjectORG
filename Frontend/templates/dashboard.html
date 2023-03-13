@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
     <title>DashBoard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -57,7 +57,7 @@
           </li>
 
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a href="./deviceData.html">
               <i class="fa fa-tachometer-alt"></i>
               <span>Device Data Stream</span>
              
@@ -78,12 +78,27 @@
   </nav>
   <!-- sidebar-wrapper  -->
   <main class="page-content">
-    <div class="container-fluid">
+    <div class="containerDashboard">
       <h2>Welcome<span style="margin-left:10px;"  id="email_token"></span></h2>
       <hr>
       <div class="row">
      
     </div>
+    <!-- <div class="containerDashboard"> -->
+    <div class="dashboardSections">
+        <div class="createShipmentDashboardSection">
+            <p class="sectionTitle">Create New Shipment</p>
+            <button id="shipmentButton" onclick="window.location.href = '/createshipment';">Create
+                Shipment</button>
+        </div>
+
+        <div class="deviceDatStreamDashboardSection">
+            <p class="sectionTitle">View Device Data Stream</p>
+            <button id="deviceStreamButton" onclick="window.location.href = '';">Device Data
+                Stream</button>
+        </div>
+    </div>
+</div>
   </main>
 
 </div>

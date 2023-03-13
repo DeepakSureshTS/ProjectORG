@@ -356,7 +356,7 @@ body {
   width: 100%;
   padding-left: 0px;
   padding-top: 20px;
-  background: #D8E2F0;
+  background: #F2E34C;
 }
 
 .page-wrapper .page-content > div {
@@ -401,7 +401,7 @@ body {
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
-}
+} 
 
 
 /*-----------------------------chiller-theme-------------------------------------------------*/
@@ -479,4 +479,91 @@ body {
 
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
+}
+
+
+.containerDashboard {
+  width: 100wh;
+  height: 100vh;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+.dashboardHeading {
+  background: #f0f0f0c0;
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(88, 88, 88, 0.3);
+}
+
+.dashboardHeading h1 {
+  font-weight: 600;
+  font-size: 2.8vw;
+}
+
+.dashboardSections {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-size: 2.2vw;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+  margin: 30px 0 200px;
+}
+
+.createShipmentDashboardSection {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  background-color: rgba(53, 71, 234, 0.2);
+}
+
+.deviceDatStreamDashboardSection {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  background-color: rgba(238, 15, 3, 0.2);
+}
+
+#shipmentButton,
+#deviceStreamButton {
+    border-radius: 3px;
+    border: 3px solid #ffffff;
+    background: white;
+    color: #000000;
+    font-size: 1vw;
+    font-weight: 700;
+    padding: 11px 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* transition: transform 80ms ease-in; */
+    position: fixed;
+    top: 60vh;
+    transition: all 0.2s ease;
+}
+
+#shipmentButton:hover,
+#deviceStreamButton:hover {
+    cursor: pointer;
+    border: 3px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.542);
+    color: rgb(0, 0, 0);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0px 0px 20px rgba(88, 88, 88, 0.4);
 }
