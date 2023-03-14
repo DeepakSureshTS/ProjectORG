@@ -1,11 +1,13 @@
+import json
 from fastapi import APIRouter, Depends, HTTPException, status
+from schema import devicesEntity
 from validation import validation
 from jwt import get_current_user
 from config import Hash
-from db import collection_name,collection_shipment
+from db import collection_name,collection_shipment,collection_device
 from jwt import (create_access_token)
 
-from user import Login, NewShipment, User
+from user import DeviceData, Login, NewShipment, User
 
 user= APIRouter()
 
@@ -64,6 +66,13 @@ def add_shipment(shipment: NewShipment,token: Login = Depends(get_current_user))
             )
         )
 #  return shipsEntity(collection_shipment.find())
+
+@user.get("/devicestream")
+def device_data(token: str = Depends(get_current_user)):
+   if token:
+       return devicesEntity(collection_device.find())
+
+   
   
 
 

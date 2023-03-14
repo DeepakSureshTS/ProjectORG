@@ -36,3 +36,18 @@ def loginEntity(item) -> dict:
 
 def loginsEntity(entity) -> list:
     return [loginEntity(item) for item in entity]
+
+def deviceEntity(item) -> dict:
+    return{
+        "Battery_Level":int(item["Battery_Level"]),
+        "Device_Id":int(item["Device_Id"]),
+        "First_Sensor_temperature":int(item["First_Sensor_temperature"]),
+        "Route_From":str(item["Route_From"]),
+        "Route_To":str(item["Route_To"]),
+    }
+def devicesEntity(entity) -> list:
+    return [deviceEntity(item) for item in entity]
+
+
+
+

@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from mongoengine import Document, StringField, IntField, DateField, DynamicDocument
 
 class User(BaseModel):
     username:str 
@@ -25,4 +26,12 @@ class NewShipment(BaseModel):
     NDC_no: int
     batch_id: int
     Serial_no_of_goods: int
+
+
+class DeviceData(DynamicDocument):
+    Battery_Level = IntField()
+    Device_Id = IntField()
+    First_Sensor_temperature = IntField()
+    Route_From = StringField()
+    Route_To = StringField()  
 
