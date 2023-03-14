@@ -355,7 +355,6 @@ body {
   display: inline-block;
   width: 100%;
   padding-left: 0px;
-  padding-top: 20px;
   background: #F2E34C;
 }
 
@@ -484,8 +483,7 @@ body {
 
 .containerDashboard {
   width: 100wh;
-  height: 100vh;
-  background-size: contain;
+  height: 99.5vh;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 80%;
