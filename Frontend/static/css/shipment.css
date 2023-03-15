@@ -1,6 +1,8 @@
 body{
 	background-repeat:no-repeat;
-	background-size:auto;
+	/* background-size:auto; */
+	background:url('../../asserts/dashboard.jpg');
+	background-size: cover;
 }
 
 
@@ -59,7 +61,7 @@ input[type=text], select {
 	padding: 20px;
 	opacity: 0.88;
   }
-  .dashboard-form #sub-btn {
+  .input-form #sub-btn {
 	content: normal;
     margin-top:5px;
     margin-right: -50%;
