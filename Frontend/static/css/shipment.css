@@ -1,8 +1,8 @@
 body{
 	background-repeat:no-repeat;
-	/* background-size:auto; */
-	background:url('../../asserts/dashboard.jpg');
-	background-size: cover;
+	background-size:auto;
+	/* background:url('../../asserts/dashboard.jpg');
+	background-size: cover; */
 }
 
 

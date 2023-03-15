@@ -40,6 +40,8 @@
   }
   body {
     font-size: 0.9rem;
+    background:url('../../asserts/dashboard.jpg');
+    background-size: cover;
   }
   .page-wrapper .sidebar-wrapper,
   .sidebar-wrapper .sidebar-brand > a,
