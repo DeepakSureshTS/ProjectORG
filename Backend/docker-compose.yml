@@ -1,0 +1,20 @@
+services:
+ frontend:
+    image: 3072a098eeb3
+    ports:
+      - "5501:8000"
+    networks:
+    - deepak
+    depends_on:
+      - backend
+
+ backend:
+   image: 644ae058b11f
+   ports:
+      - "8001:8000"
+   networks:
+      - deepak
+
+networks:
+  deepak:
+    driver: bridge       
