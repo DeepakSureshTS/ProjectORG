@@ -16,7 +16,7 @@ load_dotenv()
 base_dir = Path(__file__).resolve().parent
 
 
-connect(db="SCMDb", host= "localhost")
+connect(db="SCMXpert", host= "mongodb+srv://deepak:demo%40123@scmxpert.73z8rrw.mongodb.net/?retryWrites=true&w=majority")
 bootstrap_servers = "localhost:9092"
 topicName = 'device_data'
 
