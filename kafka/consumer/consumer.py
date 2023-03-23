@@ -4,20 +4,22 @@ from mongoengine import connect
 from kafka import KafkaConsumer
 from pydantic import BaseModel
 import sys
-sys.path.append('C:\SCM\backend\app')
 import models
 import os
 from dotenv import load_dotenv
-
+import urllib.parse
 
 
 load_dotenv()
 
 base_dir = Path(__file__).resolve().parent
+username = urllib.parse.quote_plus('deepak')
+password = urllib.parse.quote_plus("demo@123")
 
+url = "mongodb+srv://{}:{}@scmxpert.73z8rrw.mongodb.net/?retryWrites=true&w=majority".format(username, password)
 
-connect(db="SCMXpert", host= "mongodb+srv://deepak:demo%40123@scmxpert.73z8rrw.mongodb.net/?retryWrites=true&w=majority")
-bootstrap_servers = "localhost:9092"
+connect(db="SCMXpert", host= url)
+bootstrap_servers = 'backend-kafka-1:9092'
 topicName = 'device_data'
 
 class DeviceData(BaseModel):

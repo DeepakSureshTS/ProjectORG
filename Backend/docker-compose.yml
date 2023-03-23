@@ -1,20 +1,62 @@
+version: "3"
 services:
  frontend:
-    image: 3072a098eeb3
+    image: 8e81500c9247
     ports:
-      - "5501:8000"
+      - "5501:80"
     networks:
-    - deepak
+    - connect
     depends_on:
       - backend
 
  backend:
-   image: 644ae058b11f
+   image: b0eb6c88065a
    ports:
-      - "8001:8000"
+      - "8000:8000"
    networks:
-      - deepak
+      - connect
+   
+ server:
+    image: 34ac75b90fd4
+    ports:
+      - 12345:12345
+
+ zookeeper:
+    image: docker.io/bitnami/zookeeper:3.8
+    ports:
+      - 2181:2181
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+ kafka:
+    image: docker.io/bitnami/kafka:3.2
+    ports:
+      - 9092:9092
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    healthcheck:
+      test: ["CMD-SHELL", "kafka-topics.sh --bootstrap-server 127.0.0.1:9092 --list"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+      start_period: 30s
+    depends_on:
+      - zookeeper
+
+ producer:
+    image: 3caf7762008d
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+
+ consumer:
+    image: 2edd7bb22b6e
+    depends_on:
+      kafka:
+        condition: service_healthy
 
 networks:
-  deepak:
-    driver: bridge       
+  connect:
+    driver: bridge    

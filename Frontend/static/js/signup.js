@@ -6,7 +6,7 @@ function signUpData(){
   
       $.ajax({
      
-       url:"http://"+window.location.hostname+":8000/signup",
+       url:"http://localhost:8000/signup",
        dataType: "json",
             contentType: "application/json",
       type:"POST",
