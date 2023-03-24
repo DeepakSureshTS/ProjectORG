@@ -1,7 +1,7 @@
 version: "3"
 services:
  frontend:
-    image: 8e81500c9247
+    image: 2bcd51456af7
     ports:
       - "5501:80"
     networks:
