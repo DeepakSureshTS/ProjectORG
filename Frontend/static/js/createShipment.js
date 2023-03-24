@@ -53,7 +53,8 @@ async function createShipment(){
     }),
     success:function(data) {
 
-     window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html";
+    //  window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html";
+        window.location.href = "../../templates/dashboard.html";
         return(data)
     },
     error:function(xhr, ajaxOptions, thrownError){
@@ -63,5 +64,5 @@ async function createShipment(){
 }
 function logout(){
     localStorage.removeItem('access_token')
-    window.location.href = "../../../Frontend/index.html"
+    window.location.href = "../../templates/Login.html"
   }

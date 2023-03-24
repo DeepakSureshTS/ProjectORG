@@ -59,7 +59,7 @@ let passWord = document.querySelector("#password").value
     
       localStorage.setItem("access_token", data.access_token)  
  
-      window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html"
+      window.location.href = "../../templates/dashboard.html";
    
      
     },

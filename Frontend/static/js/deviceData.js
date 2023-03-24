@@ -2,7 +2,8 @@
     x.style.display = 'none';
     var token = localStorage.getItem("access_token");
                 if(token == undefined){                  
-                    window.location.href = "http://"+window.location.hostname+":5501"
+                    // window.location.href = "http://"+window.location.hostname+":5501"
+                    window.location.href = "../../templates/Login.html";
                 }else{   
   fetch("http://"+window.location.hostname+":8000/devicestream", {
     method:'GET',

@@ -6,7 +6,7 @@ function signUpData(){
   
       $.ajax({
      
-       url:"http://localhost:8000/signup",
+       url:"http://"+window.location.hostname+":8000/signup",
        dataType: "json",
             contentType: "application/json",
       type:"POST",
@@ -19,7 +19,8 @@ function signUpData(){
       success:function(data) {
         console.log(data)
         
-         window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
+        //  window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
+         window.location.href = "../../templates/Login.html";
         
       },
       error: function(xhr){
