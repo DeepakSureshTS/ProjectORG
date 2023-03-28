@@ -248,7 +248,6 @@
     content: "\f105";
     font-style: normal;
     display: inline-block;
-    font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -270,7 +269,7 @@
   }
   
   .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
-    content: "\f111";
+    content: "\f111"; 
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
     font-style: normal;

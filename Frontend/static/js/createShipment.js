@@ -3,7 +3,7 @@ async function createShipment(){
     let Invoice_no = document.querySelector("#invoice_no").value
     let container_no = document.querySelector("#container_no").value
     let shipmentDescription = document.querySelector("#shipment_description").value                
-    let description_pattern = new RegExp("[A-Za-z0-9? ,_-]+$")
+    let description_pattern = new RegExp(`[A-Za-z0-9? ,_-]+$"`)
     if (description_pattern.test(shipmentDescription)){
         var shipment_description = await shipmentDescription
     } else {
@@ -53,8 +53,8 @@ async function createShipment(){
     }),
     success:function(data) {
 
-    //  window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html";
-        window.location.href = "../../templates/dashboard.html";
+     window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/dashboard.html";
+        // window.location.href = "../../templates/dashboard.html";
         return(data)
     },
     error:function(xhr, ajaxOptions, thrownError){
