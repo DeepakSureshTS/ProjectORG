@@ -1,4 +1,4 @@
-def userEntity(item) -> dict:
+def user_Entity(item) -> dict:
     return{
         "id":str(item["_id"]),
         "username":str(item["username"]),
@@ -6,10 +6,10 @@ def userEntity(item) -> dict:
         "password":str(item["password"]),        
     }
 
-def usersEntity(entity) -> list:
-    return [userEntity(item) for item in entity]
+def users_Entity(entity) -> list:
+    return [user_Entity(item) for item in entity]
 
-def shipEntity(item) -> dict:
+def ship_Entity(item) -> dict:
     return{
         "Invoice_no":str(item["_id"]),
         "container_no":str(item["container_no"]),
@@ -25,19 +25,19 @@ def shipEntity(item) -> dict:
         "Serial_no_of_goods":str(item["Serial_no_of_goods"]),
     }
 
-def shipsEntity(entity) -> list:
-    return [shipEntity(item) for item in entity]
+def ships_Entity(entity) -> list:
+    return [ship_Entity(item) for item in entity]
 
-def loginEntity(item) -> dict:
+def login_Entity(item) -> dict:
     return{
         "email":str(item["email"]),
         "password":str(item["password"]),
     }
 
-def loginsEntity(entity) -> list:
-    return [loginEntity(item) for item in entity]
+def logins_Entity(entity) -> list:
+    return [login_Entity(item) for item in entity]
 
-def deviceEntity(item) -> dict:
+def device_Entity(item) -> dict:
     return{
         "Battery_Level":int(item["Battery_Level"]),
         "Device_Id":int(item["Device_Id"]),
@@ -45,8 +45,8 @@ def deviceEntity(item) -> dict:
         "Route_From":str(item["Route_From"]),
         "Route_To":str(item["Route_To"]),
     }
-def devicesEntity(entity) -> list:
-    return [deviceEntity(item) for item in entity]
+def devices_Entity(entity) -> list:
+    return [device_Entity(item) for item in entity]
 
 
 

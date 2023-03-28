@@ -1,13 +1,10 @@
-import json
-from fastapi import APIRouter, Depends, HTTPException, status
-from schema import devicesEntity
-from validation import validation
-from jwt import get_current_user
 from config import Hash
-from db import collection_name,collection_shipment,collection_device
-from jwt import (create_access_token)
-
-from user import DeviceData, Login, NewShipment, User
+from db import collection_device, collection_name, collection_shipment
+from fastapi import APIRouter, Depends, HTTPException, status
+from jwt import create_access_token, get_current_user
+from schema import devices_Entity
+from user import Login, NewShipment, User
+from validation import validation
 
 user= APIRouter()
 
@@ -44,7 +41,6 @@ async def create_user(user:User):
      hashed_pass= Hash.bcrypt(user.password)
      user.password= hashed_pass
      collection_name.insert_one(dict(user))
-    # return usersEntity(collection_name.find())
     return{"message": "created new user"}
 
 
@@ -65,12 +61,11 @@ def add_shipment(shipment: NewShipment,token: Login = Depends(get_current_user))
                 detail="User not Authenticated. Please log first."
             )
         )
-#  return shipsEntity(collection_shipment.find())
 
 @user.get("/devicestream")
 def device_data(token: str = Depends(get_current_user)):
    if token:
-       return devicesEntity(collection_device.find())
+       return devices_Entity(collection_device.find())
 
    
   

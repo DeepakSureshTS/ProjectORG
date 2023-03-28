@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from mongoengine import Document, StringField, IntField, DateField, DynamicDocument
+from mongoengine import StringField, IntField, DynamicDocument
 
 class User(BaseModel):
     username:str 
@@ -11,7 +11,7 @@ class Login(BaseModel):
     password:str
 
 class TokenData(BaseModel):
-    email:str = None
+    email:str = "string"
 
 class NewShipment(BaseModel):
     Invoice_no: int
