@@ -20,6 +20,7 @@ url = "mongodb+srv://{}:{}@scmxpert.73z8rrw.mongodb.net/?retryWrites=true&w=majo
 
 connect(db="SCMXpert", host= url)
 bootstrap_servers = 'backend-kafka-1:9092'
+# bootstrap_servers = 'localhost:9092'
 topicName = 'device_data'
 
 class DeviceData(BaseModel):
