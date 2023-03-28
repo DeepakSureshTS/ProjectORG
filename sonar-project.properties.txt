@@ -1,0 +1,15 @@
+# must be unique in a given SonarQube instance
+sonar.projectKey=sqp_2fb21404b564a4ad8c9acc7e32ca8128400a52b2
+
+# --- optional properties ---
+
+# defaults to project key
+#sonar.projectName=SCMDemo
+# defaults to 'not provided'
+#sonar.projectVersion=1.0
+ 
+# Path is relative to the sonar-project.properties file. Defaults to .
+#sonar.sources=.
+ 
+# Encoding of the source code. Default is default system encoding
+#sonar.sourceEncoding=UTF-8
