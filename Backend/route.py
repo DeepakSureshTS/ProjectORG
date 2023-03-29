@@ -2,7 +2,7 @@ from config import Hash
 from db import collection_device, collection_name, collection_shipment
 from fastapi import APIRouter, Depends, HTTPException, status
 from jwt import create_access_token, get_current_user
-from schema import devices_Entity
+from schema import devices_entity
 from user import Login, NewShipment, User
 from validation import validation
 
@@ -65,7 +65,7 @@ def add_shipment(shipment: NewShipment,token: Login = Depends(get_current_user))
 @user.get("/devicestream")
 def device_data(token: str = Depends(get_current_user)):
    if token:
-       return devices_Entity(collection_device.find())
+       return devices_entity(collection_device.find())
 
    
   

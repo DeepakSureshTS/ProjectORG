@@ -22,6 +22,6 @@ async function validatetoken(){
 
 function logout(){
     localStorage.removeItem('access_token')
-    // window.location.href = "../../templates/Login.html"
-    window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
+    window.location.href = "../../templates/Login.html"
+    // window.location.href = "http://"+window.location.hostname+":5500/../../Frontend/templates/Login.html";
   }
