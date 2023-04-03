@@ -22,7 +22,7 @@ async def find_users(user:Login):
         status_code=400,detail= "Password mismatch"
      )
 
-   access_token = create_access_token(data={"token":user_data["email"]})
+   access_token = create_access_token(data={"LoggedUsername":user_data["username"]})
    return {"access_token": access_token,"token_type": "bearer"}
 
 
@@ -47,7 +47,7 @@ async def create_user(user:User):
 @user.get("/token_authentication")
 def validity_check(token: str = Depends(get_current_user)):
     if token:
-        return {"Loggedemail":token}
+        return {"TokenDetails":token}
     
         
 @user.post("/add_shipment")

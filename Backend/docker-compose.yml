@@ -1,7 +1,7 @@
 version: "3"
 services:
  frontend:
-    image: 2bcd51456af7
+    image: 478a4aa7bebc
     ports:
       - "5501:80"
     networks:
@@ -10,7 +10,7 @@ services:
       - backend
 
  backend:
-   image: b0eb6c88065a
+   image: c3655ab5bfe1
    ports:
       - "8000:8000"
    networks:
@@ -45,14 +45,14 @@ services:
       - zookeeper
 
  producer:
-    image: 3caf7762008d
+    image: 4581be77091d
     depends_on:
       kafka:
         condition: service_healthy
 
 
  consumer:
-    image: 2edd7bb22b6e
+    image: 00e4e17f69c7
     depends_on:
       kafka:
         condition: service_healthy

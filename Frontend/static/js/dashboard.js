@@ -7,10 +7,10 @@ async function validatetoken(){
             headers: {"Authorization": 'Bearer ' + localStorage.getItem('access_token'),
       },
             success:function(data) {
-       
-              document.getElementById("email_token").innerHTML = data.Loggedemail.token;
               // console.log(data)
-              // console.log(data.Loggedemail.token)
+              // console.log(data.TokenDetails.token)
+              document.getElementById("user_token").innerHTML = data.TokenDetails.LoggedUsername;
+              
             },
             error: function(xhr, ajaxOptions, thrownError){                    
                 status = false

@@ -6,12 +6,14 @@ import json
 
 socket_connection = socket.socket() 
 # host is considered as the server image for docker 
-HOST = "backend-server-1" 
+# HOST = "backend-server-1" 
+HOST = "root-server-1"
 # HOST = "localhost" 
 PORT = 12345             
 socket_connection.connect((HOST,PORT))
 # based on kafka broker (docker image) 
-bootstrap_servers = 'backend-kafka-1:9092'
+# bootstrap_servers = 'backend-kafka-1:9092'
+bootstrap_servers = 'root-kafka-1:9092'
 # bootstrap_servers = 'localhost:9092'
 
 topicName = 'device_data'

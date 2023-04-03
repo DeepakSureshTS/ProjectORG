@@ -19,7 +19,8 @@ password = urllib.parse.quote_plus("demo@123")
 url = "mongodb+srv://{}:{}@scmxpert.73z8rrw.mongodb.net/?retryWrites=true&w=majority".format(username, password)
 
 connect(db="SCMXpert", host= url)
-bootstrap_servers = 'backend-kafka-1:9092'
+# bootstrap_servers = 'backend-kafka-1:9092'
+bootstrap_servers = 'root-kafka-1:9092'
 # bootstrap_servers = 'localhost:9092'
 topicName = 'device_data'
 
