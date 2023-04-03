@@ -50,7 +50,7 @@
           <li class="sidebar-dropdown ">
             <a href="./shipment.html">
               <i class="fa fa-shopping-cart"></i>
-              <span>Shipments</span>
+              <span>Create Shipment</span>
              
             </a>
           
@@ -88,10 +88,28 @@
         </style>
       </head>
         <h2>Data from Kafka</h2>
-        <div class="button">
-        <button onclick="getDeviceData(this)">Click here to view data</button>
-        </div>
-        
+        <div class="deviceDataStreamTableContainer">
+          <div id="deviceDataFormContainer">
+              <p>Please Select a Device Id to See the Data Stream</p>
+              <form id="deviceDataForm">
+                  <div class="fieldContainer deviceIdFieldContainer">
+                      <div class="inputFieldContainer">
+                          <label for="deviceId">Device Id*</label>
+                          <select name="Device_Id" id="deviceId">
+                              <option value="defaultValue" id="defaultValue">Select Device Id</option>
+                              
+                              <option value="86477747">86477747</option>
+                              
+                              <option value="88316602">88316602</option>
+ 
+                          </select>
+                      </div>
+                  </div>
+                  <div class="formButtonsContainer mt-4">
+                      <button class="getDeviceDataButton" type="button" onclick="getDeviceData(this)">Click here to view data</button>
+                  </div>
+              </form>
+          </div>
     <div class="container">
       <table summary="Live data from Kafka" class="styled-table">
         <thead>

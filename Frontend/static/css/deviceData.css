@@ -29,10 +29,7 @@
         color:#fff;
         cursor: pointer;
       }
-  button.hide{
-    visibility: hidden;
-  }
-  
+
   
   .styled-table tr:nth-child(even){background-color: #f2f2f2;}
   
@@ -50,3 +47,82 @@
   td {
     border: 1px solid black;
   }
+
+  .deviceDataStreamTableContainer {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 5px;
+    box-shadow: 0 -8px 10px rgba(0, 0, 0, 0.05),
+        0 8px 10px rgba(0, 0, 0, 0.05);
+    padding: 50px 0;
+    margin: 20px 0 30px;
+    width: 1160px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#deviceDataFormContainer {
+    width: 90%;
+    background: antiquewhite;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+#deviceDataFormContainer p {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    margin: 15px 0 10px;
+}
+
+#deviceDataForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: transparent;
+    position: relative;
+    width: 100%;
+}
+
+#deviceDataForm .fieldContainer {
+    position: relative;
+    margin: 10px 10px 20px 75px;
+    width: 50%;
+}
+
+#deviceDataForm .inputFieldContainer {
+    position: relative;
+    width: 100%;
+}
+
+#deviceDataForm .inputFieldContainer label {
+    font-size: 18px;
+    padding: 0 6px;
+}  
+
+#deviceDataForm .inputFieldContainer select {
+    background-color: #fff;
+    outline: none;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 10px 18px;
+    width: 100%;
+    height: 50px;
+    font-weight: 500;
+    border: 1px solid rgb(238, 238, 238);
+    cursor: pointer;
+}
+
+.formButtonsContainer {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.getDeviceDataButton {
+  background: linear-gradient(to right, #3548ea, #237fdb);
+  box-shadow: 0px 8px 15px rgb(156, 186, 251);
+}
