@@ -1,5 +1,5 @@
-from config import Hash
-from db import collection_device, collection_name, collection_shipment
+from passwordencryption import Hash
+from config import collection_device, collection_name, collection_shipment
 from fastapi import APIRouter, Depends, HTTPException, status
 from jwt import create_access_token, get_current_user
 from schema import devices_entity
@@ -52,10 +52,11 @@ def validity_check(token: str = Depends(get_current_user)):
         
 @user.post("/add_shipment")
 def add_shipment(shipment: NewShipment,token: Login = Depends(get_current_user)):
-    if token:
+   try :
+      if token:
         collection_shipment.insert_one(dict(shipment))
         return {"message": "created successfully"}
-    else:
+   except:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED(
                 detail="User not Authenticated. Please log first."

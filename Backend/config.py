@@ -1,10 +1,18 @@
-from passlib.context import CryptContext
+import os
+import pymongo 
+from dotenv import load_dotenv
+import urllib.parse
 
-pwd_encode=CryptContext(schemes=["bcrypt"],deprecated="auto")
+load_dotenv(dotenv_path=".env")
 
-class Hash:
-    def bcrypt(password:str):
-        return pwd_encode.hash(password)
+username = urllib.parse.quote_plus(os.getenv("dbUsername"))
+password = urllib.parse.quote_plus(os.getenv("dbPassword"))
 
-    def verify(normal,hashed):
-        return pwd_encode.verify(normal, hashed)
+url = os.getenv("dbUri").format(username, password)
+
+client = pymongo.MongoClient(url)
+
+db =client["SCMXpert"]
+collection_name = db["User"]
+collection_shipment = db["Shipments"]
+collection_device=db["device_data"]
